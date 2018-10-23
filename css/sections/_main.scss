@@ -4,24 +4,53 @@
   background-position: 0 0;
   background-size: cover;
   flex-grow: 1;
-
+  padding: 60px 0;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+
+  @include lg-block {
+    height: initial;
+  };
+
+  @include md-block {
+    padding-bottom: 100px;
+    background-image: url(/images/bg/bg2.jpg);
+  };
 
   &__left, &__right {
     @include col;
     @include size(12);
+    @include size-md(24);
+    @include md-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__left {
+    @include md-block {
+      margin-bottom: 30px;
+    };
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     margin-bottom: 22px;
+    @include md-block {
+      margin-bottom: 0;
+    };
   }
 
   &__desc {
     line-height: 1.42;
+    @include lg-block {
+      text-align: center;
+    }
+  ;
 
     &_big {
       font-size: 24px;
@@ -35,9 +64,20 @@
     top: -30px;
     left: 10px;
     line-height: 1.22;
+    @include lg-block {
+      position: static;
+      align-self: center;
+      text-align: center;
+    }
+  ;
+
     &-row {
       &:nth-child(3) {
         margin-left: -83px;
+        @include lg-block {
+          margin-left: 0;
+        }
+      ;
       }
     }
   }
@@ -46,6 +86,19 @@
 
 .logo {
   margin-bottom: 30px;
+  @include sm-block {
+    width: 149px;
+    margin-bottom: 17px;
+  };
+}
+
+.logo2 {
+  @include md-block {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  };
 }
 
 .title {
@@ -54,11 +107,23 @@
   text-transform: uppercase;
   margin-bottom: 40px;
   font-weight: 400;
+  @include sm-block {
+    font-size: 40px;
+    margin-bottom: 20px;
+  };
 }
 
 .slider {
   margin-bottom: 65px;
   width: 570px;
+  @include lg-block {
+    width: auto;
+  }
+  @include sm-block {
+    margin-bottom: 33px;
+    padding: 0 25px;
+  }
+
 }
 
 .iphone {
@@ -66,4 +131,7 @@
   margin-bottom: -50px;
   margin-left: -10px;
   margin-right: -50px;
+  @include md-block {
+    margin-left: -80px;
+  };
 }
