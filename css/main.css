@@ -1,0 +1,295 @@
+/*-----------------SECTION-MIXINS--------------------*/
+/*------------------------SECTION-FONTS----------------*/
+@font-face {
+  font-family: 'Calibri';
+  src: url("../fonts/Calibri-LightItalic.woff2") format("woff2"), url("../fonts/Calibri-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: url("../fonts/Calibri.woff2") format("woff2"), url("../fonts/Calibri.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: url("../fonts/Calibri-Italic.woff2") format("woff2"), url("../fonts/Calibri-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: url("../fonts/Calibri-BoldItalic.woff2") format("woff2"), url("../fonts/Calibri-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: url("../fonts/Calibri-Light.woff2") format("woff2"), url("../fonts/Calibri-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: url("../fonts/Calibri-Bold.woff2") format("woff2"), url("../fonts/Calibri-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*------------------------SECTION-SMART-GRID----------------*/
+/*------------------------SECTION-ADJUSTMENT----------------*/
+input::-ms-clear {
+  display: none;
+}
+
+html.ie9 * {
+  border-radius: 0 !important;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: 300;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  font-family: "Calibri", Arial, sans-serif;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.page {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (max-width: 1099.99px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media screen and (max-width: 991.99px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media screen and (max-width: 767.99px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media screen and (max-width: 575.99px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.content ul {
+  margin: 1em 0;
+  padding-left: 40px;
+}
+
+.content ul li {
+  list-style: disc;
+}
+
+.content h1 {
+  margin: 0.67em 0;
+}
+
+.content h2 {
+  margin: 0.83em 0;
+}
+
+.content h3 {
+  margin: 1em 0;
+}
+
+.content h4 {
+  margin: 1.33em 0;
+}
+
+.content h5 {
+  margin: 1.67em 0;
+}
+
+.content h5 {
+  margin: 2.33em 0;
+}
+
+.content p {
+  margin: 1em 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+b {
+  font-weight: 800;
+  font-size: 25px;
+}
+
+/*-----------------SECTION-HOVER-ANIM--------------------*/
+/*------------------------SECTION-COMMON----------------*/
+/*------------------------SECTION-HEADER----------------*/
+/*-----------------SECTION-MAIN--------------------*/
+.main {
+  background-image: url(/images/bg/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.main__left, .main__right {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(50% - 30px);
+}
+
+.main__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.main__desc {
+  line-height: 1.42;
+}
+
+.main__desc_big {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.main__text {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  position: relative;
+  top: -30px;
+  left: 10px;
+  line-height: 1.22;
+}
+
+.main__text-row:nth-child(3) {
+  margin-left: -83px;
+}
+
+.logo {
+  margin-bottom: 30px;
+}
+
+.title {
+  color: #009fe3;
+  font-size: 60px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.slider {
+  margin-bottom: 65px;
+  width: 570px;
+}
+
+.iphone {
+  margin-top: -40px;
+  margin-bottom: -50px;
+  margin-left: -10px;
+  margin-right: -50px;
+}
+
+/*------------------------SECTION-FOOTER---------------------*/
+
+/*# sourceMappingURL=main.css.map */
