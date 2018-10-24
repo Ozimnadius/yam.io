@@ -206,7 +206,7 @@ b {
 /*------------------------SECTION-HEADER----------------*/
 /*-----------------SECTION-MAIN--------------------*/
 .main {
-  background-image: url(/images/bg/bg.jpg);
+  background-image: url(../images/bg/bg.jpg);
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
