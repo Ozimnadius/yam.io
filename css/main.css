@@ -236,7 +236,7 @@ b {
 @media screen and (max-width: 991.99px) {
   .main {
     padding-bottom: 100px;
-    background-image: url(/images/bg/bg2.jpg);
+    background-image: url(../images/bg/bg2.jpg);
   }
 }
 
