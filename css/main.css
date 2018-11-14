@@ -507,7 +507,7 @@ b {
 }
 
 .message:after {
-  content: url("/images/bg/message-tail.png");
+  content: url("../images/bg/message-tail.png");
   display: block;
   position: absolute;
   bottom: -3px;
@@ -525,7 +525,7 @@ b {
 }
 
 .message:nth-child(even):after {
-  content: url("/images/bg/message-tail2.png");
+  content: url("../images/bg/message-tail2.png");
   display: block;
   position: absolute;
   bottom: -4px;
@@ -545,7 +545,7 @@ b {
 }
 
 .message_grey:after {
-  content: url("/images/bg/message-tail3.png");
+  content: url("../images/bg/message-tail3.png");
 }
 
 .message_grey .message__text {
