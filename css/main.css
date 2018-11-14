@@ -42,6 +42,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans-Semibold.woff2") format("woff2"), url("../fonts/OpenSans-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url("../fonts/MyriadPro-Regular.woff2") format("woff2"), url("../fonts/MyriadPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*------------------------SECTION-SMART-GRID----------------*/
 /*------------------------SECTION-ADJUSTMENT----------------*/
 input::-ms-clear {
@@ -327,7 +341,7 @@ b {
 }
 
 .main__text-row:nth-child(3) {
-  margin-left: -83px;
+  margin-left: -88px;
 }
 
 @media screen and (max-width: 1099.99px) {
@@ -359,11 +373,11 @@ b {
 }
 
 .title {
-  color: #009fe3;
+  color: #F3494F;
   font-size: 60px;
   text-transform: uppercase;
   margin-bottom: 40px;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 767.99px) {
@@ -376,6 +390,7 @@ b {
 .slider {
   margin-bottom: 65px;
   width: 570px;
+  position: relative;
 }
 
 @media screen and (max-width: 1099.99px) {
@@ -391,17 +406,192 @@ b {
   }
 }
 
+.slider__text {
+  text-align: center;
+  position: absolute;
+  right: 4%;
+  bottom: 10%;
+  color: #ffffff;
+  font-size: 48px;
+}
+
+@media screen and (max-width: 767.99px) {
+  .slider__text {
+    font-size: 22px;
+    right: 17%;
+    bottom: 23.4%;
+  }
+}
+
 .iphone {
   margin-top: -40px;
   margin-bottom: -50px;
   margin-left: -10px;
   margin-right: -50px;
+  position: relative;
 }
 
 @media screen and (max-width: 991.99px) {
   .iphone {
     margin-left: -80px;
   }
+}
+
+.iphone__wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 13.4%;
+  margin-bottom: 29.5%;
+  margin-left: 21%;
+  margin-right: 18.2%;
+}
+
+@media screen and (max-width: 1099.99px) {
+  .iphone__wrapper {
+    margin-right: 14.2%;
+    margin-left: 22%;
+  }
+}
+
+.iphone__top {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.iphone__content {
+  margin-top: 30px;
+  height: calc(100% - 30px);
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+.iphone__messages {
+  height: 100%;
+}
+
+.messages {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.message {
+  width: 70%;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  background-color: #067ffe;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  position: relative;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  -webkit-transform: translate3d(500px, 0, 0);
+  transform: translate3d(500px, 0, 0);
+}
+
+.message:after {
+  content: url("/images/bg/message-tail.png");
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  right: -2px;
+}
+
+.message:nth-child(even) {
+  background-color: #e5e6ea;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  width: 74%;
+  -webkit-transform: translate3d(-500px, 0, 0);
+  transform: translate3d(-500px, 0, 0);
+}
+
+.message:nth-child(even):after {
+  content: url("/images/bg/message-tail2.png");
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  left: -6px;
+}
+
+.message:nth-child(even) .message__text {
+  color: #000000;
+}
+
+.message_grey {
+  background-color: #e5e6ea;
+  -ms-flex-item-align: end !important;
+  align-self: flex-end !important;
+  -webkit-transform: translate3d(500px, 0, 0);
+  transform: translate3d(500px, 0, 0);
+}
+
+.message_grey:after {
+  content: url("/images/bg/message-tail3.png");
+}
+
+.message_grey .message__text {
+  color: #000000;
+}
+
+.message.active {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.message__img-img {
+  width: 100%;
+}
+
+.message__text {
+  padding: 6px 15px;
+  min-height: 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Myriad Pro";
+  font-size: 12px;
+  letter-spacing: 0.06px;
+  line-height: 18px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 575.99px) {
+  .message__text {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.message__link {
+  color: #8a8a8f;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.19px;
+  padding: 0 15px;
+  margin-bottom: 12px;
 }
 
 /*------------------------SECTION-FOOTER---------------------*/

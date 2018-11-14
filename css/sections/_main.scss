@@ -13,12 +13,14 @@
 
   @include lg-block {
     height: initial;
-  };
+  }
+;
 
   @include md-block {
     padding-bottom: 100px;
     background-image: url(../images/bg/bg2.jpg);
-  };
+  }
+;
 
   &__left, &__right {
     @include col;
@@ -33,7 +35,8 @@
   &__left {
     @include md-block {
       margin-bottom: 30px;
-    };
+    }
+  ;
   }
 
   &__content {
@@ -42,7 +45,8 @@
     margin-bottom: 22px;
     @include md-block {
       margin-bottom: 0;
-    };
+    }
+  ;
   }
 
   &__desc {
@@ -73,7 +77,7 @@
 
     &-row {
       &:nth-child(3) {
-        margin-left: -83px;
+        margin-left: -88px;
         @include lg-block {
           margin-left: 0;
         }
@@ -89,7 +93,8 @@
   @include sm-block {
     width: 149px;
     margin-bottom: 17px;
-  };
+  }
+;
 }
 
 .logo2 {
@@ -98,19 +103,21 @@
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-  };
+  }
+;
 }
 
 .title {
-  color: #009fe3;
+  color: #F3494F;
   font-size: 60px;
   text-transform: uppercase;
   margin-bottom: 40px;
-  font-weight: 400;
+  font-weight: bold;
   @include sm-block {
     font-size: 40px;
     margin-bottom: 20px;
-  };
+  }
+;
 }
 
 .slider {
@@ -123,6 +130,22 @@
     margin-bottom: 33px;
     padding: 0 25px;
   }
+  position: relative;
+
+  &__text {
+    text-align: center;
+    position: absolute;
+    right: 4%;
+    bottom: 10%;
+    color: $bg;
+    font-size: 48px;
+    @include sm-block {
+      font-size: 22px;
+      right: 17%;
+      bottom: 23.4%;
+    }
+  ;
+  }
 
 }
 
@@ -131,7 +154,147 @@
   margin-bottom: -50px;
   margin-left: -10px;
   margin-right: -50px;
+  position: relative;
   @include md-block {
     margin-left: -80px;
-  };
+  }
+;
+
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 13.4%;
+    margin-bottom: 29.5%;
+    margin-left: 21%;
+    margin-right: 18.2%;
+    @include lg-block {
+      margin-right: 14.2%;
+      margin-left: 22%;
+    }
+  ;
+  }
+
+  &__top {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__content {
+    margin-top: 30px;
+    height: calc(100% - 30px);
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    overflow: hidden;
+    padding: 0 15px;
+  }
+
+  &__messages {
+    height: 100%;
+  }
+}
+
+.messages {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.message {
+  width: 70%;
+  align-self: flex-end;
+  background-color: #067ffe;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  position: relative;
+  transition: .5s;
+  transform: translate3d(500px, 0, 0);
+
+
+
+  &:after {
+    content: url("/images/bg/message-tail.png");
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    right: -2px;
+  }
+
+  &:nth-child(even) {
+    background-color: #e5e6ea;
+    align-self: flex-start;
+    width: 74%;
+    transform: translate3d(-500px, 0, 0);
+
+    &:after {
+      content: url("/images/bg/message-tail2.png");
+      display: block;
+      position: absolute;
+      bottom: -4px;
+      left: -6px;
+    }
+
+    .message__text {
+      color: $text;
+    }
+  }
+
+  &_grey {
+    background-color: #e5e6ea;
+    align-self: flex-end !important;
+    transform: translate3d(500px, 0, 0);
+
+    &:after {
+      content: url("/images/bg/message-tail3.png");
+    }
+
+    .message__text {
+      color: $text;
+    }
+  }
+
+  &.active {
+    transform: translate3d(0, 0, 0);
+  }
+
+  &__img {
+    &-img {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    padding: 6px 15px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    color: rgba($bg, .9);
+    font-family: "Myriad Pro";
+    font-size: 12px;
+    letter-spacing: 0.06px;
+    line-height: 18px;
+    overflow: hidden;
+
+    @include xs-block {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  ;
+  }
+
+  &__link {
+    color: #8a8a8f;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.19px;
+    padding: 0 15px;
+    margin-bottom: 12px;
+  }
 }
