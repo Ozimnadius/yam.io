@@ -219,7 +219,7 @@
 
 
   &:after {
-    content: url("/images/bg/message-tail.png");
+    content: url("../images/bg/message-tail.png");
     display: block;
     position: absolute;
     bottom: -3px;
@@ -234,7 +234,7 @@
     transform: translate3d(-500px, 0, 0);
 
     &:after {
-      content: url("/images/bg/message-tail2.png");
+      content: url("../images/bg/message-tail2.png");
       display: block;
       position: absolute;
       bottom: -4px;
@@ -252,7 +252,7 @@
     transform: translate3d(500px, 0, 0);
 
     &:after {
-      content: url("/images/bg/message-tail3.png");
+      content: url("../images/bg/message-tail3.png");
     }
 
     .message__text {
