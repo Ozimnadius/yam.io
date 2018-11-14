@@ -207,7 +207,7 @@
 }
 
 .message {
-  width: 70%;
+  max-width: 70%;
   align-self: flex-end;
   background-color: #067ffe;
   margin-bottom: 20px;
@@ -228,8 +228,9 @@
 
   &:nth-child(even) {
     background-color: #e5e6ea;
+    border-radius: 20px;
     align-self: flex-start;
-    width: 74%;
+    max-width: 74%;
     transform: translate3d(-500px, 0, 0);
 
     &:after {
@@ -237,7 +238,7 @@
       display: block;
       position: absolute;
       bottom: -4px;
-      left: -6px;
+      left: -4px;
     }
 
     .message__text {

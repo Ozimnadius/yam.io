@@ -492,7 +492,7 @@ b {
 }
 
 .message {
-  width: 70%;
+  max-width: 70%;
   -ms-flex-item-align: end;
   align-self: flex-end;
   background-color: #067ffe;
@@ -516,9 +516,10 @@ b {
 
 .message:nth-child(even) {
   background-color: #e5e6ea;
+  border-radius: 20px;
   -ms-flex-item-align: start;
   align-self: flex-start;
-  width: 74%;
+  max-width: 74%;
   -webkit-transform: translate3d(-500px, 0, 0);
   transform: translate3d(-500px, 0, 0);
 }
@@ -528,7 +529,7 @@ b {
   display: block;
   position: absolute;
   bottom: -4px;
-  left: -6px;
+  left: -4px;
 }
 
 .message:nth-child(even) .message__text {
