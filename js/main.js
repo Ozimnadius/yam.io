@@ -58,12 +58,15 @@ window.onload = function () {
 
     var count = 0,
         messagesInterval = setInterval(function () {
-
-            var messageObj = createMessage(messages[count]);
-            messagesObj.append(messageObj);
-            messageObj.animate()
-            messageObj.addClass('active');
-            count++;
+            if (count < messages.length) {
+                var messageObj = createMessage(messages[count]);
+                messagesObj.append(messageObj);
+                messageObj.animate()
+                messageObj.addClass('active');
+                count++;
+            } else {
+                clearInterval(messagesInterval);
+            }
         }, 3000);
 
     for (key in messages) {
