@@ -387,6 +387,12 @@ b {
   }
 }
 
+@media screen and (max-width: 575.99px) {
+  .title {
+    text-align: center;
+  }
+}
+
 .slider {
   margin-bottom: 65px;
   width: 570px;
