@@ -29,7 +29,15 @@ window.onload = function () {
             },
             {
                 class: 'message',
-                text: 'Как оказалось - нет! Я спокоен, ЯМ Интернешнл помогает'
+                text: 'Как оказалось - нет! Я спокоен, ЯМ Интернешнл помогает',
+                scale: {
+                    timeout: 1000
+                },
+                logo: {
+                    class: 'message__logo',
+                    src: 'images/content/logo2.png',
+                    timeout: 2500
+                }
             }
         ],
         messagesObj = $('.messages');
@@ -57,24 +65,51 @@ window.onload = function () {
     }
 
     function appendMessage(count) {
-        var messageObj = createMessage(messages[count]);
+        var messageObj = createMessage(messages[count]),
+            message = messages[count];
+
         messagesObj.append(messageObj);
-        messageObj.animate()
+        messageObj.animate();
         messageObj.addClass('active');
+
+        if (message.scale) {
+            setTimeout(function () {
+                messageObj.addClass('scale');
+            }, message.scale.timeout);
+        }
+
+        if (message.logo) {
+            var logo = $('<div>').addClass(message.logo.class),
+                logoImg = $('<img/>').attr('src', message.logo.src);
+
+            logo.append(logoImg);
+
+            setTimeout(function () {
+                messagesObj.append(logo);
+                logo.animate();
+                logo.addClass('active');
+            }, message.logo.timeout);
+        }
     }
 
-    var count = 0,
-        messagesInterval = setTimeout(function tick() {
-            if (count < messages.length) {
-                appendMessage(count);
-                count++;
-                var messagesInterval = setTimeout (tick, 3000);
-            } else {
-                clearTimeout(messagesInterval);
-            }
-        }, 1000);
+    var iterratorInterval = setTimeout(function tik() {
 
-    for (key in messages) {
+        var count = 0,
+            messagesInterval = setTimeout(function tick() {
+                if (count < messages.length) {
+                    appendMessage(count);
+                    count++;
+                    var messagesInterval = setTimeout(tick, 3000);
+                } else {
+                    clearTimeout(messagesInterval);
 
-    }
+                    setTimeout(function () {
+                        messagesObj.html('');
+                        var iterratorInterval = setTimeout(tik, 1000);
+                    }, 4000);
+                }
+            }, 1000);
+
+    }, 0);
+
 };

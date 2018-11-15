@@ -264,6 +264,19 @@
 
   &.active {
     transform: translate3d(0, 0, 0);
+
+  }
+
+  &.scale {
+    width: 100%;
+    max-width: 100%;
+    transform-origin: 0 bottom;
+    .message__text {
+      font-size: 20px;
+      line-height: 28px;
+      //transform: scale(2);
+      //padding: 30px 90px;
+    }
   }
 
   &__img {
@@ -283,6 +296,7 @@
     letter-spacing: 0.06px;
     line-height: 18px;
     overflow: hidden;
+    transition: .3s;
 
     @include xs-block {
       font-size: 10px;
@@ -299,5 +313,15 @@
     letter-spacing: 0.19px;
     padding: 0 15px;
     margin-bottom: 12px;
+  }
+
+  &__logo {
+    margin-bottom: 20px;
+    transform: translate3d(-500px, 0, 0);
+    transition: .5s;
+
+    &.active{
+      transform: translate3d(0, 0, 0);
+    }
   }
 }

@@ -563,6 +563,19 @@ b {
   transform: translate3d(0, 0, 0);
 }
 
+.message.scale {
+  width: 100%;
+  max-width: 100%;
+  -webkit-transform-origin: 0 bottom;
+  -ms-transform-origin: 0 bottom;
+  transform-origin: 0 bottom;
+}
+
+.message.scale .message__text {
+  font-size: 20px;
+  line-height: 28px;
+}
+
 .message__img-img {
   width: 100%;
 }
@@ -582,6 +595,9 @@ b {
   letter-spacing: 0.06px;
   line-height: 18px;
   overflow: hidden;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
 }
 
 @media screen and (max-width: 575.99px) {
@@ -599,6 +615,20 @@ b {
   letter-spacing: 0.19px;
   padding: 0 15px;
   margin-bottom: 12px;
+}
+
+.message__logo {
+  margin-bottom: 20px;
+  -webkit-transform: translate3d(-500px, 0, 0);
+  transform: translate3d(-500px, 0, 0);
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+
+.message__logo.active {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 /*------------------------SECTION-FOOTER---------------------*/
