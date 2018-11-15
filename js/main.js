@@ -29,7 +29,7 @@ window.onload = function () {
             },
             {
                 class: 'message',
-                text: 'Как оказалось - нет! Я спокоен, ЯМ Интернешнл помагает'
+                text: 'Как оказалось - нет! Я спокоен, ЯМ Интернешнл помогает'
             }
         ],
         messagesObj = $('.messages');
@@ -56,18 +56,23 @@ window.onload = function () {
 
     }
 
+    function appendMessage(count) {
+        var messageObj = createMessage(messages[count]);
+        messagesObj.append(messageObj);
+        messageObj.animate()
+        messageObj.addClass('active');
+    }
+
     var count = 0,
-        messagesInterval = setInterval(function () {
+        messagesInterval = setTimeout(function tick() {
             if (count < messages.length) {
-                var messageObj = createMessage(messages[count]);
-                messagesObj.append(messageObj);
-                messageObj.animate()
-                messageObj.addClass('active');
+                appendMessage(count);
                 count++;
+                var messagesInterval = setTimeout (tick, 3000);
             } else {
-                clearInterval(messagesInterval);
+                clearTimeout(messagesInterval);
             }
-        }, 3000);
+        }, 1000);
 
     for (key in messages) {
 
